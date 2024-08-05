@@ -1,0 +1,78 @@
+Que--> Diffrence between logical AND and Logical OR
+Ans-->In logical AND it is going to check both the conditions if first condition comes true for the exection whereas in Logical OR it is going to check got first condition if it comes false then it is going to check for second condition
+
+1. keywords --> keywords are the reserved words whose meaning is already been explained to the language compiled.
+2. Identifiers --> Name of any variable, class, function or and another thing in the language.
+
+Rules for Identifying a Identifier
+-->cannot start with a number
+-->identifiers consist of alphabete(a-z A-Z), Numbers(0-9), and Underscore(_) {we are able to use $ in Java}
+
+3. DataTypes--> DataType tell the type of Data that we are going to store in the Memory and for storing the data how much memory is required.
+Built in DataTypes:
+    int 
+    float 
+    char 
+    double 
+    bool 
+    string
+User Defined DataTypes:
+    class
+    Stucture
+    Functions
+Drived DataTypes
+    Array
+    Pointer
+Empty DataTypes
+    void
+
+4. variables-->It is a Container that is used to store data. It is a Name Location in the menory that are used to hold a value
+syntax for variable:--> StorageClass DataType variableName.
+storageClass-> defines the scope and visibility of the variable
+
+int main(){
+    int x = 10,20,30,40;
+    cout<<x;
+    return 0;
+}
+What is th output of the following Code:
+Ans-> Compilation Error
+int main(){
+    int x = (10,20,30,40);
+    cout<<x;
+    return 0;
+}
+Ans-> x=40 
+as in this code multiple values are going to assigned to x hence the latest value is the value of x ehich is 40
+
+int main(){
+    int x
+    x = 10,20,30,40;
+    cout<<x;
+    return 0;
+}
+No Error th compiler assign 10 value to the x because in this case the x is inilatixe first then assigned the value rathar than assigning the value while initalizing
+
+
+Integer Literal --> a+52
+Floating Literal --> a+4.5
+Character Literal --> a + aman
+String Literal -->  a + 'h'
+
+constant Variables--> The variables which we are not going to change at the time of the execution. To make the variable constant we will use const keywords
+
+    int const x=10;
+    cout<<x;
+    return 0;
+
+    output--> 10
+
+short int      :2byte  
+int            :4byte //depend on compiler to compiler
+long int       :4byte
+long long int  :8byte
+
+Operators --> operators are used to preform mathemetical and logical operations in the program.
+
+Post-Increment--> menas first assign the non-incremented value of a variable to the expression and then increase the value of the variable by one in the memory.
+Pre-Increment--> menas first increase the value of the variable by one in the memory and then assign the incremented value to the variable.

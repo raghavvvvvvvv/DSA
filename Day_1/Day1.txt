@@ -1,0 +1,57 @@
+Programming Techneques
+1. Unstuctured Programming
+2. Procedural Programming
+3. Modular Programming
+4. Object- Oriented Programming
+
+
+What is OOPS?
+OOPS is a Object oriented Programming Language Working with the Objects and Classes.
+
+input output function in OOPS --> istream for input and ostream for output but we use iostream for input and output.
+
+OOP is a Programing Paradigm or Technique in which problems are think as real world entities.
+
+OOP works on a 4 wheeler
+1. Encapsulation:-wrapping or binding our similar type of data together for security.
+2. Abstraction:-Hiding of Unnecessary datails from the user.
+3. Polymorphism:-
+4. Inheritance:-
+
+Difference between scanf() and gets() in C
+scanf: It is used to read the input(character, string, numeric data) from the standard input keyboar. If Space Encounters it will stop taking input.
+gets: It is used to read the input until it encounters newline or End Of File(EOF). It takes the full input including spaces. It takes only string input not numbers or any other datatype.
+
+C++ development
+Developed by Bjarne Stroustrup at AT and T Bell Laboratory of USA in 1983.
+
+
+compiler names
+c compiler: gcc
+c++ compiler : g++
+java compiler: javac.
+
+To Run the C++ Code in compiler
+Step1: g++ ./fileName.cpp //an exe File created named as a.exe
+Step2: ./a.exe //Running the exe File
+
+cpp -> c pre-processor.
+
+Program:
+#include<iostream>
+using namespace std;
+int main(){
+    cout<<"Hello world!!";
+    return 0;
+}
+
+Explaination: 
+# -> pre-processing directives = are used to include the content of the file.
+header files -> containes the prototypes of build-in classes and functions. eg. <iostream>
+using and namespace are keywords
+namespace -> a container which contains the build-in classes
+In c++ return type of main must be int(integer).
+main() -> pre-prototypes user-defined function. it is entry function of program.
+() -> defines a function and used to pass arguments
+{} -> used to define the scope of function.
+

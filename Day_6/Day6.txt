@@ -1,0 +1,117 @@
+Polimorphism
+--> polymorphism means many forms.
+--> Polymorphism is of two types 
+    -> Compile Time Polymorphism. (Static or Early Binding)
+    -> Run Time Polimorphism. (Dianimic or late Binding)
+
+Compile time Polymorphism:- When an object is bound to its function call is is called compile time polymorphism.
+                            It is also known as early Binding or static Binding
+        For Example:- 1. Function Overloading
+                      2. Operator Overloading
+    
+Function Overloading:
+
+#include<iostream>
+using namespace std;
+class Output{
+    public:
+        void print(char ch){
+            cout<<ch;
+        }
+        void print(int ch){
+            cout<<ch;
+        }
+        void print(string ch){
+            cout<<ch;
+        }
+        void print(int x, int y){
+            cout<<x<<y;
+        }
+        
+};
+int main(){
+    Output ob;
+    ob.print('A');
+    ob.print("man");
+    ob.print(2003);
+    ob.print(2,8);
+    return 0;
+}
+
+Operator Overloading: Operator Overloading means giving capabilites to the operator to work on diffrent types of operands.
+    The operator +,* etc works for int , float etc we can overload these operators by giving them the capabilites to work on derived data types.
+    By making the operators to work on derived data types just like they work on built-in data types, we can have a consistent approach.
+    This is done with the help of special function called operator function.
+
+Syntax of Operator Overloading:
+    return-tyoe classname::operator #(arg-list)
+Often operator function return an object of the class they operate on, but ret-type can be evalid type. The # is a placeholder. When ypu create an operator function substitute the operator for the #.
+
+Rules for operator overloading:
+1. Only existing operator can be overloaded. New operator can not be overloaded.
+2. The overloading operator must have at least one operand that is of derived data type.
+3. We can not change the basic meaning og an operator. This is to say, we can not redefine the plus(+) operator to subtract onc value from the other.
+4. overloaded operator follow the syntax rules of the orignal operator. They cannot be overridden.
+5. There are some operator that can not be overloaded.
+    The Operators that cannot be oerloaded.
+        1. (Sizeof) Size of Operator
+        2. (.) Membership Operator
+        3. (.*) pointer operator
+        4. (::) Scope resolution Operator
+        5. (?:) conditional operator
+
+Example:
+#include<iostream>
+using namespace std;
+class Number{
+    int x;
+    public:
+    Number(int val){
+        x=val;
+    }
+    int operator+(Number obj){
+        return x + obj.x;
+    }
+    int operator-(Number obj){
+        return x - obj.x;
+    }
+    int operator*(Number obj){
+        return x * obj.x;
+    }
+    double operator/(Number obj){
+        return x / obj.x;
+    }
+    int operator%(Number obj){
+        return x % obj.x;
+    }
+    bool operator==(Number obj){
+        return x == obj.x;
+    }
+    int operator--(){
+        return --x;
+    }
+    int operator--(int val){
+        return x--;
+    }
+    int operator++(){
+        return ++x;
+    }
+    int operator++(int val){
+        return x++;
+    }
+};
+int main(){
+    Number num1=89;
+    Number num2=34;
+    cout<<num1+num2<<endl;
+    cout<<num1-num2<<endl;
+    cout<<num1*num2<<endl;
+    cout<<num1/num2<<endl;
+    cout<<num1%num2<<endl;
+    cout<<(num1==num2)<<endl;
+    cout<<++num1<<endl;
+    cout<<num1++<<endl;
+    cout<<--num2<<endl;
+    cout<<num2--<<endl;
+    return 0;
+}

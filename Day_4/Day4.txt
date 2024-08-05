@@ -1,0 +1,62 @@
+CLASS:
+The building block of C++ that leads to object oriented programming in a Class 
+It is user defined datatype, which holds its own data members and member functions which can be assessed and used by creating an instance of that Class.
+A Class is like a blueprint for an object.
+
+OBJECT:
+-->An Object is an identifier entity with some characterstics and behaviour. An object is an instance of a class. When a class is defined, no memory is allocated.
+-->For each object diffrent seperate memory allocated on compile time in stack 
+
+class className{
+    Access Specifier;   // cna be private, public or product.
+    Data Members;       //Variable to be used.
+    Mamber Function; {} // Methods to access datamembers.
+};                      // Class NAme ends with a Semicolon.
+
+Que--> How to access the Data Members and Member Functions of the Class?
+Ans--> The Data Members and memner functions of the class can be accessed using the dot(.) operator with the object.
+
+-->Class Vs Stucture
+1. In Class by default the Data Members are Private but in Stucture the Data MEmbers are Public by Default.
+2. Structure get memory allocated even without any object but class dosent get memory allocated if no object is initiated.
+3. Stucture dosent have any MEmber functions.
+
+-->Access Modifiers: USed to define access right of class Member.
+1. Public: Can be accesed by anyone through object.
+2. Private: Can Be access inside the class only.
+3. Protected: Can be accesed inside the Class and by inherited class only.
+** If we donot specify any access modifiers for the members inside the class, then by default the acess modifier for the members will be private.
+
+-->There are 2 diffrent ways to define a member function:
+1. Inside class defination
+2. Outside class defination
+
+-->Inline Function:
+1. An inline Function is a function that is expanded in line when it is invoked. That is, The compiler replaces the function call with the coresponding function code.
+2. Usually the function are made inline when they are small.
+
+-->Some of the situation where inline expansion may not work.
+1. If function has a loop, a switch, or a goto.
+2. if function contain static variable.
+3. If function is recursive.
+
+--> Friend Class and Friend Function
+
+A Friend Class can be access private and protected member of other classes in which it is declared as a friend.
+It is sometmes useful to allow a particular class 
+
+class Employee{
+    int id=1001;
+    string name='Andy';
+    protected:
+    string dept="IT";
+    friend void display();  //asking the class that the finction display is friend of Employee class.
+};
+void display(){
+    Employee ob; // Accessing private members of the Employee
+    cout<<ob.id<<"\t"<<ob.name<<"\t"<<endl;
+}
+int main(){
+    display(); //Calling the display Function.
+    return 0;
+}

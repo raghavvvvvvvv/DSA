@@ -1,0 +1,169 @@
+Bitwise Operators
+
+Bitwise AND             =>          &
+Bitwise OR              =>          |
+Bitwise XOR             =>          ^
+Bitwise NOT             =>          ~
+Bitwise Left Shift      =>          <<
+Bitwise Right Sift      =>          >>
+
+-128 to 127 --> 1 byte (1 byte = 8 bits)
+-32768 to 32768 --> 2 byte
+
+Bitwise AND (&)
+17 & 23                 
+17 -> 0 0 0 1 0 0 0 1             
+23 -> 0 0 0 1 0 1 1 1        
+_____________________      
+   -> 0 0 0 1 0 0 0 1 => 17
+   by using AND operator between corresponding digits.
+
+89 & 27
+89 -> 0 1 0 1 1 0 0 1
+27 -> 0 0 0 1 1 0 1 1
+_____________________
+   -> 0 0 0 1 1 0 0 1 => 25
+
+Bitwise OR(|)
+89 | 27
+89 -> 0 1 0 1 1 0 0 1
+27 -> 0 0 0 1 1 0 1 1
+_____________________
+   -> 0 1 0 1 1 0 1 1 => 91
+
+BitWise XOR(^)
+89 ^ 27
+89 -> 0 1 0 1 1 0 0 1
+27 -> 0 0 0 1 1 0 1 1
+_____________________
+      0 1 0 0 0 0 1 0 => 66
+
+Bitwise Not (~)
+~9
+09 -> 0 0 0 0 1 0 0 1
+______________________
+   -> 1 1 1 1 0 1 1 0 => 246
+
+as 1byte = 8 bits
+128  64  32  16  8  4  2  1 => 255
+hence, we can score number upto 255.
+
+we are taking MSB as sign bit for denoting negative or positive number
+as we know that the MSB is 1 and hence the number is Negative  -------(i)
+Now Finding the 2s complement
+
+                1 1 1 1 0 1 1 0 
+                _______________
+1s complement-> 0 0 0 0 1 0 0 1
+                            + 1
+                _______________
+2s complement-> 0 0 0 0 1 0 1 0 => 10 
+as from eq (i) the number is Negative Hence the Answer is -10   
+
+~17
+
+17 -> 0 0 0 1 0 0 0 1
+______________________
+   -> 1 1 1 0 1 1 1 0
+as MSB is 1 hence No is in negative
+
+1s complement -> 0 0 0 1 0 0 0 1
+                             + 1
+                __________________
+2s Complement -> 0 0 0 1 0 0 1 0 => 18
+Ans -> -18
+
+~(-15)
+
+15 ->            1 0 0 0 1 1 1 1
+__________________________________
+~15->            1 1 1 1 0 0 0 0
+                             + 1
+                __________________
+2s Complement -> 1 1 1 1 0 0 0 1 => -15
+
+~(-15) -> 0 0 0 0 1 1 1 0 => 14
+                            
+For finding the complement if negative number it will always be(n-1)
+for finding the complement of positive number if will always be(n+1) (answer will always negative)
+
+Left Shift Operators
+
+10 << 1     # always represent in 8 bit (1byte)
+
+0 0 0 0 1 0 1 0
+left Shift
+0 0 0 1 0 1 0 0 => 20
+
+10 << 2
+
+10       -> 0 0 0 0 1 0 1 0
+____________________________
+1st Move -> 0 0 0 1 0 1 0 0
+2nd Move -> 0 0 1 0 1 0 0 0 => 40
+
+Right Shift Operators
+
+10>>2
+
+10       -> 0 0 0 0 1 0 1 0
+1st Move -> _ 0 0 0 0 1 0 1
+2nd Move -> _ _ 0 0 0 0 1 0
+___________________________
+If Number is Negative then the blanks are filled by 1 
+and if the number is positive the blanks are filled with the 0
+
+here the number is positive hence the blanks are filled with 0
+therefore ans-> 0 0 0 0 0 0 1 0 => 2
+
+#Control Statements
+
+control statements/ decision making: are used to control the flow of program
+1. If Statements
+    a. simple if statement
+    b. if else statement
+    c. else if Ladder
+    d. nested if statement
+2. Switch Statements
+
+Jumping Statements
+1. goto statements
+2. break
+3. continue
+
+looping Statements
+1. for 
+2. while
+3. do while //used to run the code once without checking he condition and after that runs code by checking condition        
+4. for each //used to preform iteration in a collection
+
+syntax of if
+if(Expression){
+    code
+}
+** in C++ we have expression in if statement but in Java we have Expression in If.
+
+
+int main(){
+    if(1,2,3,4,5,6,7,8,9,0){
+        cout<<"Hello";
+    }
+    else{
+        cout<<"Bye";
+    }
+    return 0;
+}
+Output: Bye
+-->as if concider the right most value to evaluate
+
+
+int main(){
+    if(){
+        cout<<"Hello";
+    }
+    else{
+        cout<<"Bye";
+    }
+    return 0;
+}
+-->in this it will give compilation Error as IF statement needs an expression always

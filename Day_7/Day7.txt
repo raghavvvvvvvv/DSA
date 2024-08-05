@@ -1,0 +1,121 @@
+array: for creating static array.
+vector: for creating dynamic array.
+
+dynamic memory allocation:
+    Smart Pointers
+        Unique Pointers
+        Shared Pointers
+        Week Pointers
+    
+STL: Standard Template Library.
+Templates in C++:
+    1.Template is a very powerful tool in C++.
+    2.The Simple idea is to pass the data type as a parameter so that we dont need to write the same code for diffrent data type.
+    3.C++ adds two new keyword:
+                a.Template
+                b.Typename
+    4.Templates are expanded at compile time. This is like macros.
+    5. The diffrence is that the compiler dose type checking before template expansion.
+
+// Templates in C++
+
+#include<iostream>
+using namespace std;
+template <typename T> class Number{
+    T x,y;
+    public:
+    Number(T a,T b){
+        x=a;
+        y=b;
+    }
+    void sum(){
+        cout<<x+y<<endl;
+        }
+};
+int main(){
+    Number<int> ob(11,22);
+    ob.sum();
+    Number<string> num1("abc","dgs");
+    num1.sum();
+    return 0;
+}
+
+We can use more than one Template typename such to increase flexibility among users.
+
+example:
+#include<iostream>
+#include<string>
+using namespace std;
+template <typename T1, typename T2> class Number{
+    T1 x;
+    T2 y;
+    public:
+    Number(T1 a,T2 b){
+        x=a;
+        y=b;
+    }
+    void sum(){
+        cout<<x+y<<endl;
+        }
+};
+int main(){
+    Number<int,int> ob(11,22);
+    ob.sum();
+    Number<float,int> num1(34.43,65.33);
+    num1.sum();
+    Number<string,string> num2("Aman","deep");
+    num2.sum();
+    return 0;
+}   
+
+Que: Create an Template Class for an Array and implement followinfg function:
+        1. Minimum Value : min()
+        2. Maximum Value : max()
+        3. Print Array : printArray()
+
+#include<iostream>
+using namespace std;
+template <typename T,int size>
+class Array{
+    T array[size];
+    public:
+        Array(T arr[]){
+            for(int i=0;i<size;i++){
+                array[i]=arr[i];
+            }
+        }
+    
+        T max(){
+            T mx=array[0]; 
+            for(T i: array){
+                if(i > mx){
+                    mx=i;
+                }
+            }
+            return mx;
+        }
+        T min(){
+            T mn=array[0];
+            for(T i: array){
+                if(i < mn){
+                    mn=i;
+                }
+            }
+            return mn;
+        }
+        void printArray(){
+            for(T i: array){
+                cout<<i<<" ";
+            }
+        }
+};
+int main(){
+    int arr[]={10,20,30,40,50};
+    Array<int,5> ob(arr);
+    ob.printArray();
+    cout<<endl;
+    cout<<"The Minimum Value is "<<ob.min()<<endl;
+    cout<<"The MAximum Value is "<<ob.max()<<endl;
+    
+    
+}
